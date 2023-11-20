@@ -11,6 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
+    font-family: 'Inter', sans-serif;
 }
 
 .sign-in-form {
@@ -43,23 +44,24 @@ body {
 .sign-in-form__title {
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
-.text {
-    font-family: 'Inter', sans-serif;
-    color: #344054;
-
-    font-size: 0.875rem;
-    letter-spacing: -0.0262rem;
+.text-bold {
+    color: #0B1326;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.0781rem;
     line-height: 140%;
 }
 
-.text--smokey {
+.text-smokey {
+    font-size: 0.875rem;
     color: rgba(151, 159, 199, 0.90);
+    font-weight: 500;
+    letter-spacing: -0.0262rem;
+    line-height: 140%;
 }
-
-.text--link {
+.text-link {
     color: #0567FC;
     font-size: 0.875rem;
     font-weight: 500;
@@ -68,18 +70,8 @@ body {
     text-decoration: none;
 }
 
-.text--title {
-    font-size: 1.5rem;
-    line-height: 140%;
-    letter-spacing: -0.0781rem;
-    font-weight: 500;
-    color: #0B1326;
-}
-
-.text--small {
-    font-size: 0.75rem;
-    letter-spacing: -0.36px;
-    line-height: 140%;
+.centered{
+    align-self: center;
 }
 
 
@@ -98,7 +90,7 @@ body {
     border: 1px solid rgba(11, 19, 38, 0.06);
 }
 
-.sign-in-form__input {
+input[type=text]{
     color: #475467;
     font-family: Inter, serif;
     font-size: 0.875rem;
@@ -107,7 +99,15 @@ body {
     letter-spacing: -0.42px;
     padding-left:4%;
 }
-
+input[type=password]{
+    color: #475467;
+    font-family: Inter, serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.42px;
+    padding-left:4%;
+}
 .row-container{
     display: flex;
     justify-content:space-between;
@@ -126,6 +126,15 @@ input[type=checkbox]{
     display: none;
 }
 
+.text-small{
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.36px;
+    line-height: 140%;
+    color:#344054;
+
+}
 
 .custom-checkbox+label {
     display: inline-flex;
@@ -151,7 +160,7 @@ input[type=checkbox]{
 .custom-checkbox:checked+label::before {
     border-color: #0567FC;
     background-color: #0567FC;
-    background-image: url("img/Check.svg");
+    background-image: url("img/checkbox-check.png");
 }
 
 .sign-in-form__button{
