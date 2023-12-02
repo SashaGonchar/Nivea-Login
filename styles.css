@@ -106,7 +106,6 @@ input[type=email], [type=password] {
     flex-direction: row;
     height: auto;
     width: 100%;
-    justify-content: flex-start;
 }
 
 input[type=checkbox] {
@@ -146,4 +145,22 @@ input[type=checkbox] {
     border-radius: 8px;
     background-color: rgba(11, 19, 38, 0.06);
     border: none;
+}
+
+@media (max-width: 448px) {
+
+    body{
+        background:rgba(151, 159, 199, 0.9);
+    }
+
+    .sign-in-form {
+        width: 95%;
+        height: 90vh;
+    }
+
+    .sign-in-form__container {
+        width: 90%;
+        height: 75vh;
+        justify-content: space-evenly;
+    }
 }
