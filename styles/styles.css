@@ -136,7 +136,7 @@ input[type=checkbox] {
 .custom_checkbox:checked + label::before {
     border-color: rgba(5, 103, 252, 1);
     background-color: rgba(5, 103, 252, 1);
-    background-image: url("img/Check.svg");
+    background-image: url("../img/Check.svg");
 }
 
 .sign-in-form__button {
