@@ -1,4 +1,4 @@
-function createElement(elementType, attributes = {}, innerText = "") {
+function createElement(elementType, attributes = {},parent, innerText = "") {
     const element = document.createElement(elementType);
 
     for (const attribute in attributes) {
@@ -8,54 +8,54 @@ function createElement(elementType, attributes = {}, innerText = "") {
     if (innerText !== undefined) {
         element.textContent = innerText;
     }
-
+    parent.append(element)
     return element;
 }
 
 const signInForm = createElement("div", {
     "class": "sign-in-form",
-})
+},document.body)
 
 const signInFormContainer = createElement("div", {
     "class": "sign-in-form__container",
-})
+},signInForm)
 
 const signInFormLogo = createElement("img", {
     "class": "sign-in-form__logo",
     "src": "img/Logo.svg",
     "alt": "logo"
-})
+},signInFormContainer)
 
 const signInFormTitleContainer = createElement("div", {
     "class": "sign-in-form__title",
-})
+},signInFormContainer)
 
 const signInFormTitle = createElement("p", {
         "class": "text text_title",
-    },
+    },signInFormTitleContainer,
     "Sign in to your account"
 )
 
 const signInFormNotAMember = createElement("p", {
         "class": "text text_smokey",
-    },
+    },signInFormTitleContainer,
     "Not a member? "
 )
 
 const signInFormSignUpLink = createElement("a", {
         "class": "text text_link",
-    },
+    },signInFormNotAMember,
     "Sign Up "
 )
 
 const signInFormEmailLabelContainer = createElement("div", {
     "class": "sign-in-form__label",
-})
+},signInFormContainer)
 
 const signInFormEmailLabel = createElement("label", {
         "class": "text text_smokey",
         "for": "email"
-    },
+    },signInFormEmailLabelContainer,
     "Email"
 )
 
@@ -65,26 +65,26 @@ const signInFormEmailInput = createElement("input", {
     "name": "email",
     "placeholder": "Your Email",
     "class": "sign-in-form__input text text_gray"
-});
+},signInFormEmailLabelContainer);
 
 const signInFormPasswordLabelContainer = createElement("div", {
     "class": "sign-in-form__label",
-})
+},signInFormContainer)
 
 const rowContainer = createElement("div", {
     "class": "row-container",
-})
+},signInFormPasswordLabelContainer)
 
 const signInFormPasswordLabel = createElement("label", {
         "class": "text text_smokey",
         "for": "password"
-    },
+    },rowContainer,
     "Password"
 )
 
 const signInFormForgotPassword = createElement("a", {
         "class": "text text_link",
-    },
+    },rowContainer,
     "Forgot Password?"
 )
 
@@ -94,51 +94,29 @@ const signInFormPasswordInput = createElement("input", {
     "name": "password",
     "placeholder": "Type your password here",
     "class": "sign-in-form__input text text_gray"
-});
+},signInFormPasswordLabelContainer);
 
 const signInFormCheckboxContainer = createElement("div", {
     "class": "sign-in-form__checkbox",
-})
+},signInFormContainer)
 
 const signInFormCheckboxInput = createElement("input", {
     "id": "remember",
     "type": "checkbox",
     "name": "remember",
     "class": "custom_checkbox"
-});
+},signInFormCheckboxContainer);
 
 const signInFormCheckboxLabel = createElement("label", {
         "class": "text text_small",
         "for": "remember"
-    },
+    },signInFormCheckboxContainer,
     "Remember me"
 )
 
 const signInFormButton = createElement("button", {
         "class": "sign-in-form__button text",
         "for": "remember"
-    },
+    },signInFormContainer,
     "Sign in"
 )
-
-
-document.body.append(signInForm);
-signInForm.append(signInFormContainer);
-signInFormContainer.append(signInFormLogo);
-signInFormContainer.append(signInFormTitleContainer);
-signInFormTitleContainer.append(signInFormTitle);
-signInFormTitleContainer.append(signInFormNotAMember);
-signInFormNotAMember.append(signInFormSignUpLink);
-signInFormContainer.append(signInFormEmailLabelContainer);
-signInFormEmailLabelContainer.append(signInFormEmailLabel);
-signInFormEmailLabelContainer.append(signInFormEmailInput);
-signInFormContainer.append(signInFormPasswordLabelContainer);
-signInFormPasswordLabelContainer.append(rowContainer);
-rowContainer.append(signInFormPasswordLabel);
-rowContainer.append(signInFormForgotPassword);
-signInFormPasswordLabelContainer.append(signInFormPasswordInput);
-signInFormContainer.append(signInFormCheckboxContainer);
-signInFormCheckboxContainer.append(signInFormCheckboxInput);
-signInFormCheckboxContainer.append(signInFormCheckboxLabel);
-signInFormContainer.append(signInFormButton);
-signInFormContainer.append(signInFormButton);
